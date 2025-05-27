@@ -6,6 +6,7 @@
     <title>Giant Brand Company Ltd. | Creative Design Solutions</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 <link rel="prefetch" href="services/graphic-design.html" as="document">
 <link rel="prefetch" href="services/animations.html" as="document">
@@ -25,17 +26,22 @@
                 <span class="logo-text">Giant Brand Company Ltd.</span>
             </a>
             <nav class="main-nav">
-                <ul>
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="services/graphic-design.html">Graphic Design</a></li>
-                    <li><a href="services/animations.html">Animations</a></li>
-                    <li><a href="services/indoor-outdoor.html">Indoor + Outdoor</a></li>
-                    <li><a href="services/video-photography.html">Video + Photo</a></li>
-                    <li><a href="services/web-development.html">Web Design</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
+    <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle">Services <i class="fas fa-chevron-down"></i></a>
+            <ul class="dropdown-menu">
+                <li><a href="services/graphic-design.html">Graphic Design</a></li>
+                <li><a href="services/animations.html">Animations</a></li>
+                <li><a href="services/indoor-outdoor.html">Indoor + Outdoor</a></li>
+                <li><a href="services/video-photography.html">Video + Photo</a></li>
+                <li><a href="services/web-development.html">Web Design</a></li>
+            </ul>
+        </li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
         </div>
     </header>
 
