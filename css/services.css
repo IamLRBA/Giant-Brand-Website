@@ -1,0 +1,122 @@
+/* Service Detail Pages */
+.service-detail {
+    display: flex;
+    gap: 50px;
+    margin-bottom: 60px;
+}
+
+.service-detail-image {
+    flex: 1;
+    min-height: 400px;
+    background-color: #eee;
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.service-detail-content {
+    flex: 1;
+}
+
+.service-specs {
+    margin: 30px 0;
+}
+
+.spec-item {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.spec-item .spec-label {
+    font-weight: bold;
+    width: 150px;
+    color: var(--primary);
+}
+
+.price-list {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-top: 40px;
+}
+
+.price-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.price-table th, .price-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.price-table th {
+    background-color: #f5f5f5;
+    font-weight: 600;
+}
+
+/* Service Hero Section */
+.service-hero {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    color: var(--white);
+    padding: 150px 5% 100px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+/* Gallery */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin: 40px 0;
+}
+
+.gallery-item {
+    height: 200px;
+    background-color: #eee;
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.gallery-item:hover {
+    transform: scale(1.03);
+}
+
+@media (max-width: 900px) {
+    .service-detail {
+        flex-direction: column;
+    }
+    
+    .service-detail-image {
+        min-height: 300px;
+    }
+}
+
+@media (max-width: 600px) {
+    .price-table {
+        display: block;
+        overflow-x: auto;
+    }
+    
+    .spec-item {
+        flex-direction: column;
+    }
+    
+    .spec-item .spec-label {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+}

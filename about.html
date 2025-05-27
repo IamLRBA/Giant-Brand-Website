@@ -3,55 +3,223 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - PrintWorks</title>
-    <!-- Same styles as index.html -->
+    <title>About Us | Giant Brand Company Ltd.</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="prefetch" href="services/graphic-design.html" as="document">
 </head>
 <body>
+    <!-- Header with Hamburger Menu -->
     <header>
-        <!-- Same header as index.html -->
+        <div class="header-container">
+            <button class="hamburger-btn" aria-label="Menu" aria-expanded="false" aria-controls="main-nav">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            <a href="index.html" class="logo">
+                <span class="logo-icon">GBC</span>
+                <span class="logo-text">Giant Brand Company Ltd.</span>
+            </a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services/graphic-design.html">Graphic Design</a></li>
+                    <li><a href="services/animations.html">Animations</a></li>
+                    <li><a href="services/indoor-outdoor.html">Indoor + Outdoor</a></li>
+                    <li><a href="services/video-photography.html">Video + Photo</a></li>
+                    <li><a href="services/web-development.html">Web Design</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
     
-    <div class="main-content">
-        <section class="container">
-            <div class="about-section">
-                <div class="about-image"></div>
-                <div class="about-content">
-                    <h2>Our Story</h2>
-                    <p>Founded in 2010, PrintWorks began as a small local print shop with a passion for quality and customer service. What started as a two-person operation has grown into one of the region's most trusted printing companies.</p>
-                    <p>We've invested in the latest printing technology while maintaining our commitment to craftsmanship and attention to detail. Our team of skilled professionals brings decades of combined experience to every project.</p>
-                    <p>At PrintWorks, we believe in building lasting relationships with our clients. Whether you're a small business owner, a marketing professional, or an individual with a special project, we're here to bring your vision to life with exceptional print quality.</p>
-                </div>
-            </div>
-            
-            <div class="section-title">
-                <h2>Our Team</h2>
-            </div>
-            
-            <div class="team-members">
-                <div class="team-member">
-                    <div class="team-member-image" style="background-image: url('https://via.placeholder.com/150')"></div>
-                    <h4>Sarah Johnson</h4>
-                    <p>Founder & CEO</p>
-                </div>
-                <div class="team-member">
-                    <div class="team-member-image" style="background-image: url('https://via.placeholder.com/150')"></div>
-                    <h4>Michael Chen</h4>
-                    <p>Print Production Manager</p>
-                </div>
-                <div class="team-member">
-                    <div class="team-member-image" style="background-image: url('https://via.placeholder.com/150')"></div>
-                    <h4>Emily Rodriguez</h4>
-                    <p>Graphic Designer</p>
-                </div>
-                <div class="team-member">
-                    <div class="team-member-image" style="background-image: url('https://via.placeholder.com/150')"></div>
-                    <h4>David Wilson</h4>
-                    <p>Customer Service</p>
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="about-hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Our <span class="highlight">Story</span></h1>
+                    <p class="hero-subtitle">Discover the passion and dedication behind Giant Brand Company Ltd.</p>
                 </div>
             </div>
         </section>
-    </div>
-    
-    <!-- Same footer as index.html -->
+
+        <!-- About Content -->
+        <section class="about-section">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-image" data-aos="fade-right">
+                        <div class="image-wrapper">
+                            <div class="glow-effect"></div>
+                            <img src="images/about-office.jpg" alt="Our Office">
+                        </div>
+                    </div>
+                    <div class="about-content" data-aos="fade-left">
+                        <h2>Our Journey</h2>
+                        <p>Founded in 2019, Giant Brand Company Ltd began as a small local print shop with a passion for quality and customer service in Juba. What started as a one-person operation has grown into one of the region's most trusted branding and printing companies.</p>
+                        <p>We've invested in the latest branding and printing technology while maintaining our commitment to craftsmanship and attention to detail. Our team of skilled professionals brings decades of combined experience to every project.</p>
+                        <p>At Giant Brand Company Ltd, we believe in building lasting relationships with our clients. Whether you're a small business owner, a marketing professional, or an individual with a special project, we're here to bring your vision to life with exceptional brand quality.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats-section">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-card" data-aos="zoom-in">
+                        <div class="stat-number" data-count="150">0</div>
+                        <div class="stat-label">Projects Completed</div>
+                    </div>
+                    <div class="stat-card" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="stat-number" data-count="50">0</div>
+                        <div class="stat-label">Happy Clients</div>
+                    </div>
+                    <div class="stat-card" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="stat-number" data-count="5">0</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat-card" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="stat-number" data-count="12">0</div>
+                        <div class="stat-label">Awards Won</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section class="team-section">
+            <div class="container">
+                <div class="section-title" data-aos="fade-up">
+                    <h2>Meet Our <span class="highlight">Team</span></h2>
+                    <p>The creative minds behind your brand's success</p>
+                </div>
+                
+                <div class="team-members">
+                    <div class="team-member" data-aos="fade-up">
+                        <div class="team-member-image">
+                            <img src="images/team-ezibon.jpg" alt="Ezibon Sadalla Khamis">
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <h4>Ezibon Sadalla Khamis</h4>
+                        <p>Founder & CEO</p>
+                        <div class="member-bio">Visionary leader with 10+ years in creative branding and business strategy.</div>
+                    </div>
+                    <div class="team-member" data-aos="fade-up" data-aos-delay="100">
+                        <div class="team-member-image">
+                            <img src="images/team-irene.jpg" alt="Lekuru Irene Gasper">
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <h4>Lekuru Irene Gasper</h4>
+                        <p>Production Manager</p>
+                        <div class="member-bio">Quality assurance expert ensuring every project meets our high standards.</div>
+                    </div>
+                    <div class="team-member" data-aos="fade-up" data-aos-delay="200">
+                        <div class="team-member-image">
+                            <img src="images/team-matthew.jpg" alt="Matthew">
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <h4>Matthew</h4>
+                        <p>Graphic Designer</p>
+                        <div class="member-bio">Creative genius transforming ideas into visually stunning designs.</div>
+                    </div>
+                    <div class="team-member" data-aos="fade-up" data-aos-delay="300">
+                        <div class="team-member-image">
+                            <img src="images/team-suzan.jpg" alt="Suzan">
+                            <div class="social-links">
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <h4>Suzan</h4>
+                        <p>Customer Service</p>
+                        <div class="member-bio">Your friendly point of contact ensuring smooth communication.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section" data-aos="fade-up">
+            <div class="container">
+                <h2>Ready to Start Your Project?</h2>
+                <p>Let's create something amazing together</p>
+                <a href="contact.html" class="cta-button pulse">Get in Touch</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <a href="index.html" class="footer-logo">Giant Brand Company Ltd.</a>
+                    <p>Creative design solutions that transform ideas into visually stunning realities.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-behance"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="services/graphic-design.html">Graphic Design</a></li>
+                        <li><a href="services/animations.html">Animations</a></li>
+                        <li><a href="services/indoor-outdoor.html">Indoor/Outdoor</a></li>
+                        <li><a href="services/video-photography.html">Video/Photography</a></li>
+                        <li><a href="services/web-development.html">Web Development</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Golden Star Petrol Station, Along Muniki - Gudele Road</p>
+                    <p><i class="fas fa-phone"></i> +211 927 272 929</p>
+                    <p><i class="fas fa-envelope"></i> thegiantbrand@gmail.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span class="current-year"></span> Giant Brand Company Ltd. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/about.js"></script>
 </body>
 </html>
