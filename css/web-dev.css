@@ -1,0 +1,240 @@
+/* Web Development Specific Styles */
+.web-hero {
+  background: linear-gradient(135deg, #1b263b 0%, #0d1b2a 100%);
+  color: white;
+  padding: 100px 5%;
+  display: flex;
+  align-items: center;
+  min-height: 80vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-animation {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background: rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.code-line {
+  height: 20px;
+  background: rgba(67, 97, 238, 0.1);
+  margin-bottom: 15px;
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+}
+
+.code-line::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(90deg, transparent, rgba(67, 97, 238, 0.3), transparent);
+  animation: codeScan 3s infinite linear;
+}
+
+@keyframes codeScan {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.web-portfolio {
+  padding: 80px 5%;
+  background-color: #f9f9f9;
+}
+
+.portfolio-filters {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 12px 25px;
+  background: transparent;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.filter-btn:hover, .filter-btn.active {
+  background: var(--primary);
+  color: white;
+}
+
+.portfolio-showcase {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 40px;
+}
+
+.web-project {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.web-project:hover {
+  transform: translateY(-10px);
+}
+
+.project-preview {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+}
+
+.project-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.web-project:hover .project-preview img {
+  transform: scale(1.1);
+}
+
+.project-links {
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  background: linear-gradient(transparent, rgba(0,0,0,0.8));
+  transition: bottom 0.3s ease;
+}
+
+.web-project:hover .project-links {
+  bottom: 0;
+}
+
+.view-btn, .live-btn {
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.view-btn {
+  background: white;
+  color: var(--primary);
+}
+
+.live-btn {
+  background: var(--primary);
+  color: white;
+  border: 2px solid var(--primary);
+}
+
+.view-btn:hover {
+  background: var(--primary);
+  color: white;
+}
+
+.live-btn:hover {
+  background: transparent;
+  color: var(--primary);
+}
+
+.project-info {
+  padding: 25px;
+}
+
+.tech-stack {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
+
+.tech-stack span {
+  padding: 5px 15px;
+  background: #f0f0f0;
+  border-radius: 30px;
+  font-size: 14px;
+  color: #555;
+}
+
+/* Project Modal */
+.project-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 10px;
+  max-width: 1000px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.close-modal {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 30px;
+  color: var(--primary);
+  cursor: pointer;
+  z-index: 2;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .hero-animation {
+    display: none;
+  }
+  
+  .hero-content {
+    text-align: center;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .portfolio-showcase {
+    grid-template-columns: 1fr;
+  }
+  
+  .project-links {
+    bottom: 0;
+    opacity: 0;
+  }
+  
+  .web-project:hover .project-links {
+    opacity: 1;
+  }
+}

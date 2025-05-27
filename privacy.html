@@ -3,77 +3,269 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - PrintWorks</title>
-    <!-- Same styles as index.html -->
+    <title>Privacy Policy | Giant Brand Company Ltd.</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="prefetch" href="services/graphic-design.html" as="document">
 </head>
 <body>
+    <!-- Header with Hamburger Menu -->
     <header>
-        <!-- Same header as index.html -->
+        <div class="header-container">
+            <button class="hamburger-btn" aria-label="Menu" aria-expanded="false" aria-controls="main-nav">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            <a href="index.html" class="logo">
+                <span class="logo-icon">GBC</span>
+                <span class="logo-text">Giant Brand Company Ltd.</span>
+            </a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services/graphic-design.html">Graphic Design</a></li>
+                    <li><a href="services/animations.html">Animations</a></li>
+                    <li><a href="services/indoor-outdoor.html">Indoor + Outdoor</a></li>
+                    <li><a href="services/video-photography.html">Video + Photo</a></li>
+                    <li><a href="services/web-development.html">Web Design</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
     
-    <div class="main-content">
-        <section class="container">
-            <div class="privacy-content">
-                <h2>Privacy Policy</h2>
-                <p>Last Updated: January 1, 2023</p>
-                
-                <p>PrintWorks ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.</p>
-                
-                <h3>Information We Collect</h3>
-                <p>We may collect information about you in a variety of ways:</p>
-                <ul>
-                    <li><strong>Personal Data:</strong> Name, email address, phone number, and other contact or identity information you voluntarily provide when contacting us or placing an order.</li>
-                    <li><strong>Payment Information:</strong> Credit card numbers and related financial data when you make purchases (processed securely by our payment processor).</li>
-                    <li><strong>Derivative Data:</strong> Information our servers automatically collect when you access the site, such as your IP address, browser type, and access times.</li>
-                </ul>
-                
-                <h3>How We Use Your Information</h3>
-                <p>We use the information we collect to:</p>
-                <ul>
-                    <li>Process and fulfill your orders</li>
-                    <li>Respond to your inquiries and provide customer support</li>
-                    <li>Improve our website and services</li>
-                    <li>Send you promotional materials (if you opt-in)</li>
-                    <li>Comply with legal obligations</li>
-                </ul>
-                
-                <h3>Sharing of Information</h3>
-                <p>We do not sell or rent your personal information to third parties. We may share information with:</p>
-                <ul>
-                    <li>Service providers who assist with our business operations (payment processing, shipping, etc.)</li>
-                    <li>Legal authorities when required by law</li>
-                    <li>Business partners in connection with a merger or acquisition</li>
-                </ul>
-                
-                <h3>Data Security</h3>
-                <p>We implement appropriate technical and organizational measures to protect your personal information. However, no internet transmission is completely secure, and we cannot guarantee absolute security.</p>
-                
-                <h3>Your Rights</h3>
-                <p>Depending on your location, you may have rights to:</p>
-                <ul>
-                    <li>Access and receive a copy of your personal data</li>
-                    <li>Request correction or deletion of your information</li>
-                    <li>Object to or restrict processing of your data</li>
-                    <li>Withdraw consent (where applicable)</li>
-                </ul>
-                <p>To exercise these rights, please contact us using the information below.</p>
-                
-                <h3>Changes to This Policy</h3>
-                <p>We may update this Privacy Policy periodically. The updated version will be posted on our website with a new "Last Updated" date.</p>
-                
-                <h3>Contact Us</h3>
-                <p>If you have questions about this Privacy Policy, please contact us at:</p>
-                <p>
-                    PrintWorks<br>
-                    123 Print Street<br>
-                    Graphic City, GC 12345<br>
-                    Email: privacy@printworks.com<br>
-                    Phone: (555) 123-4567
-                </p>
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="privacy-hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Privacy <span class="highlight">Policy</span></h1>
+                    <p class="hero-subtitle">Last Updated: <span class="current-date"></span></p>
+                </div>
             </div>
         </section>
-    </div>
-    
-    <!-- Same footer as index.html -->
+
+        <!-- Privacy Content -->
+        <section class="privacy-section">
+            <div class="container">
+                <div class="privacy-content" data-aos="fade-up">
+                    <div class="privacy-intro">
+                        <p>Giant Brand Company Ltd ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services.</p>
+                    </div>
+
+                    <div class="privacy-article" data-aos="fade-up">
+                        <h2><span class="highlight-number">1.</span> Information We Collect</h2>
+                        <p>We may collect information about you in a variety of ways:</p>
+                        <ul class="animated-list">
+                            <li>
+                                <div class="list-icon">
+                                    <i class="fas fa-user-circle"></i>
+                                </div>
+                                <div class="list-content">
+                                    <strong>Personal Data:</strong> Name, email address, phone number, and other contact or identity information you voluntarily provide when contacting us or placing an order.
+                                </div>
+                            </li>
+                            <li>
+                                <div class="list-icon">
+                                    <i class="fas fa-credit-card"></i>
+                                </div>
+                                <div class="list-content">
+                                    <strong>Payment Information:</strong> Credit card numbers and related financial data when you make purchases (processed securely by our payment processor).
+                                </div>
+                            </li>
+                            <li>
+                                <div class="list-icon">
+                                    <i class="fas fa-server"></i>
+                                </div>
+                                <div class="list-content">
+                                    <strong>Derivative Data:</strong> Information our servers automatically collect when you access the site, such as your IP address, browser type, and access times.
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="privacy-article" data-aos="fade-up">
+                        <h2><span class="highlight-number">2.</span> How We Use Your Information</h2>
+                        <p>We use the information we collect to:</p>
+                        <div class="usage-grid">
+                            <div class="usage-card">
+                                <div class="usage-icon">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </div>
+                                <h4>Process Orders</h4>
+                                <p>Fulfill your purchases and provide order confirmations</p>
+                            </div>
+                            <div class="usage-card">
+                                <div class="usage-icon">
+                                    <i class="fas fa-headset"></i>
+                                </div>
+                                <h4>Customer Support</h4>
+                                <p>Respond to your inquiries and provide assistance</p>
+                            </div>
+                            <div class="usage-card">
+                                <div class="usage-icon">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <h4>Improve Services</h4>
+                                <p>Enhance our website and service offerings</p>
+                            </div>
+                            <div class="usage-card">
+                                <div class="usage-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <h4>Marketing</h4>
+                                <p>Send promotional materials (if you opt-in)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="privacy-article" data-aos="fade-up">
+                        <h2><span class="highlight-number">3.</span> Data Security</h2>
+                        <p>We implement appropriate technical and organizational measures to protect your personal information:</p>
+                        <div class="security-features">
+                            <div class="security-feature">
+                                <div class="feature-icon">
+                                    <i class="fas fa-lock"></i>
+                                </div>
+                                <div class="feature-content">
+                                    <h4>Encryption</h4>
+                                    <p>All sensitive data is encrypted during transmission</p>
+                                </div>
+                            </div>
+                            <div class="security-feature">
+                                <div class="feature-icon">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <div class="feature-content">
+                                    <h4>Access Control</h4>
+                                    <p>Strict access limitations to personal data</p>
+                                </div>
+                            </div>
+                            <div class="security-feature">
+                                <div class="feature-icon">
+                                    <i class="fas fa-sync-alt"></i>
+                                </div>
+                                <div class="feature-content">
+                                    <h4>Regular Audits</h4>
+                                    <p>Ongoing security assessments and updates</p>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="note">Note: While we implement these security measures, no internet transmission is completely secure, and we cannot guarantee absolute security.</p>
+                    </div>
+
+                    <div class="privacy-article" data-aos="fade-up">
+                        <h2><span class="highlight-number">4.</span> Your Rights</h2>
+                        <p>Depending on your location, you may have rights to:</p>
+                        <div class="rights-grid">
+                            <div class="right-card">
+                                <div class="right-icon">
+                                    <i class="fas fa-eye"></i>
+                                </div>
+                                <h4>Access</h4>
+                                <p>Request a copy of your personal data</p>
+                            </div>
+                            <div class="right-card">
+                                <div class="right-icon">
+                                    <i class="fas fa-edit"></i>
+                                </div>
+                                <h4>Correction</h4>
+                                <p>Update or correct inaccurate information</p>
+                            </div>
+                            <div class="right-card">
+                                <div class="right-icon">
+                                    <i class="fas fa-trash-alt"></i>
+                                </div>
+                                <h4>Deletion</h4>
+                                <p>Request removal of your personal data</p>
+                            </div>
+                            <div class="right-card">
+                                <div class="right-icon">
+                                    <i class="fas fa-ban"></i>
+                                </div>
+                                <h4>Objection</h4>
+                                <p>Object to certain processing activities</p>
+                            </div>
+                        </div>
+                        <p>To exercise these rights, please contact us using the information below.</p>
+                    </div>
+
+                    <div class="privacy-article" data-aos="fade-up">
+                        <h2><span class="highlight-number">5.</span> Contact Us</h2>
+                        <p>If you have questions about this Privacy Policy, please contact us at:</p>
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Giant Brand Company Ltd</h4>
+                                <p><i class="fas fa-map-marker-alt"></i> Golden Star Petrol Station, Along Muniki - Gudele Road</p>
+                                <p><i class="fas fa-envelope"></i> thegiantbrand@gmail.com</p>
+                                <p><i class="fas fa-phone"></i> +211 927 272 929</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <a href="index.html" class="footer-logo">Giant Brand Company Ltd.</a>
+                    <p>Creative design solutions that transform ideas into visually stunning realities.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-behance"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="services/graphic-design.html">Graphic Design</a></li>
+                        <li><a href="services/animations.html">Animations</a></li>
+                        <li><a href="services/indoor-outdoor.html">Indoor/Outdoor</a></li>
+                        <li><a href="services/video-photography.html">Video/Photography</a></li>
+                        <li><a href="services/web-development.html">Web Development</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Golden Star Petrol Station, Along Muniki - Gudele Road</p>
+                    <p><i class="fas fa-phone"></i> +211 927 272 929</p>
+                    <p><i class="fas fa-envelope"></i> thegiantbrand@gmail.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span class="current-year"></span> Giant Brand Company Ltd. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/privacy.js"></script>
 </body>
 </html>
