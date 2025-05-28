@@ -14,8 +14,9 @@
     --light: #F8F9FA;
     --dark: #1B263B;
     --text: #333333;
-    --text-light: #666666;
+    --text-light: #282828;
     --white: #FFFFFF;
+    --black: #000000;
 }
 
 body {
@@ -29,17 +30,60 @@ body {
 h1, h2, h3, h4 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 800;
+    color: var(--black);
 }
 
 a {
     text-decoration: none;
     color: inherit;
+    transition: all 0.3s ease;
 }
 
-.highlight {
-    outline: 1px solid red;
-    background: rgba(255,0,0,0.1);
+.highlight-bg {
+  background-color: #FFE8B0; /* soft orange-yellow */
+  color: inherit;
+  padding: 0 4px;
+  border-radius: 4px;
 }
+
+mark {
+  background-color: #E58A14;
+  color: #fff;
+  font-weight: inherit;
+  border-radius: 3px;
+  padding: 0 4px;
+}
+
+.highlight-text {
+  position: relative;
+  display: inline-block;
+}
+
+.highlight-text::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0.1em;
+  width: 100%;
+  height: 0.3em;
+  background-color: white;
+  z-index: -1;
+  border-radius: 2px;
+}
+
+.highlight-gradient {
+  background: linear-gradient(90deg, #FFFFFF, #FFB347);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.highlight-box {
+  border: 4px solid #E58A14;
+  padding: 1.5px 6px;
+  border-radius: 8px;
+  color: #E58A14;
+}
+
 
 .container {
     max-width: 1200px;
@@ -158,17 +202,19 @@ nav ul {
 
 nav ul li {
     margin-left: 30px;
+    position: relative;
 }
 
 nav ul li a {
     font-weight: 500;
-    transition: color 0.3s;
-    position: relative;
+    color: var(--text);
     padding: 5px 0;
+    position: relative;
 }
 
-nav ul li a:hover {
-    color: #FDA01F;
+.main-nav a:hover, 
+.main-nav a.active {
+    color: var(--primary);
 }
 
 nav ul li a::after {
@@ -178,89 +224,14 @@ nav ul li a::after {
     left: 0;
     width: 0;
     height: 2px;
-    background-color: #FDA01F;
-    transition: width 0.3s;
+    background-color: var(--primary);
+    transition: width 0.3s ease;
 }
 
-nav ul li a:hover::after {
+.main-nav a:hover::after, 
+.main-nav a.active::after {
     width: 100%;
 }
-
-/* Dropdown Menu Styles */
-.dropdown {
-    position: relative;
-}
-
-.dropdown-toggle {
-    display: flex;
-    align-items: left;
-    gap: 5px;
-}
-
-.dropdown-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: #fff;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    border-radius: 5px;
-    padding: 10px 0;
-    min-width: 200px;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateX(10px);
-    transition: all 0.3s ease;
-    z-index: 1000;
-}
-
-.dropdown:hover .dropdown-menu {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-.dropdown-menu li {
-    padding: 0;
-    margin: 0;
-}
-
-.dropdown-menu a {
-    display: block;
-    padding: 8px 20px;
-    color: #333;
-    transition: all 0.3s ease;
-}
-
-.dropdown-menu a:hover {
-    background: #f5f5f5;
-    color: var(--primary-color);
-}
-
-/* Mobile Dropdown Styles */
-@media (max-width: 992px) {
-    .dropdown-menu {
-        position: static;
-        box-shadow: none;
-        opacity: 1;
-        visibility: visible;
-        transform: none;
-        display: none;
-        padding-left: 20px;
-    }
-
-    .dropdown.active .dropdown-menu {
-        display: table-column;
-    }
-
-    .dropdown-toggle .fa-chevron-down {
-        transition: transform 0.3s ease;
-    }
-
-    .dropdown.active .dropdown-toggle .fa-chevron-down {
-        transform: rotate(180deg);
-    }
-}
-
 
 /* ===== HERO SECTION ===== */
 .hero {
@@ -276,14 +247,6 @@ nav ul li a:hover::after {
     overflow: hidden;
 }
 
-.particles-js-canvas-el {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
 .hero-content {
     position: relative;
     z-index: 2;
@@ -292,9 +255,9 @@ nav ul li a:hover::after {
 }
 
 .hero-title {
-    font-size: 4rem;
+    font-size: 6rem;
     margin-bottom: 20px;
-    line-height: 1.1;
+    line-height: 1.2;
     animation: fadeInUp 1s ease;
 }
 
@@ -326,11 +289,6 @@ nav ul li a:hover::after {
     cursor: pointer;
     z-index: 2;
     animation: bounce 2s infinite;
-}
-
-.scroll-down i {
-    margin-top: 10px;
-    font-size: 1.2rem;
 }
 
 /* ===== BUTTONS ===== */
@@ -379,6 +337,11 @@ nav ul li a:hover::after {
 }
 
 /* ===== SECTIONS ===== */
+
+.section {
+    padding: 100px 0;
+}
+
 .section-title {
     text-align: center;
     margin-bottom: 60px;
@@ -486,16 +449,26 @@ nav ul li a:hover::after {
     transition: all 0.3s ease;
 }
 
+/* ===== UTILITY CLASSES ===== */
+.text-center { text-align: center; }
+.text-primary { color: var(--primary); }
+.bg-white { background-color: var(--white); }
+.bg-light { background-color: var(--light); }
+.bg-dark { background-color: var(--dark); }
+.bg-black { background-color: var(--black); }
+
 /* Portfolio Section */
 .portfolio-section {
     padding: 100px 0;
-    background-color: var(--light);
+    background: linear-gradient(0deg, #0000006e, #ffffff);
 }
 
 .portfolio-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     gap: 25px;
+    background-color: var(--primary);
+    border-radius: 15px;
 }
 
 .portfolio-item {
@@ -503,7 +476,8 @@ nav ul li a:hover::after {
     height: 300px;
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.541);
+    background-color: var(--light);
 }
 
 .portfolio-item img {
@@ -590,7 +564,6 @@ nav ul li a:hover::after {
     border-radius: 15px;
     padding: 30px;
     scroll-snap-align: start;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
 .testimonial-content {
@@ -656,7 +629,7 @@ nav ul li a:hover::after {
 
 /* Footer */
 footer {
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.845);
     color: var(--white);
     padding: 80px 0 0;
 }
@@ -1001,12 +974,12 @@ footer {
     min-height: 500px;
     display: flex;
     align-items: center;
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0,0.7)), url('images/about-hero.jpg');
-background-size: cover;
-background-position: center;
-color: var(--white);
-text-align: center;
-overflow: hidden;
+    background: var(--primary-dark);
+    background-size: cover;
+    background-position: center;
+    color: var(--black);
+    text-align: center;
+    overflow: hidden;
 }
 
 .about-grid {
@@ -1562,77 +1535,3 @@ grid-template-columns: 1fr;
 
 }
 
-/* Dropdown Menu Styles */
-.dropdown {
-    position: relative;
-}
-
-.dropdown-toggle {
-    display: flex;
-    align-items: left;
-    gap: 5px;
-}
-
-.dropdown-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: #fff;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    border-radius: 5px;
-    padding: 10px 0;
-    min-width: 200px;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(10px);
-    transition: all 0.3s ease;
-    z-index: 1000;
-}
-
-.dropdown:hover .dropdown-menu {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-.dropdown-menu li {
-    padding: 0;
-    margin: 0;
-}
-
-.dropdown-menu a {
-    display: block;
-    padding: 8px 20px;
-    color: #333;
-    transition: all 0.3s ease;
-}
-
-.dropdown-menu a:hover {
-    background: #f5f5f5;
-    color: var(--primary-color);
-}
-
-/* Mobile Dropdown Styles */
-@media (max-width: 992px) {
-    .dropdown-menu {
-        position: static;
-        box-shadow: none;
-        opacity: 1;
-        visibility: visible;
-        transform: none;
-        display: none;
-        padding-left: 20px;
-    }
-
-    .dropdown.active .dropdown-menu {
-        display: table-column;
-    }
-
-    .dropdown-toggle .fa-chevron-down {
-        transition: transform 0.3s ease;
-    }
-
-    .dropdown.active .dropdown-toggle .fa-chevron-down {
-        transform: rotate(180deg);
-    }
-}
