@@ -64,17 +64,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Mobile dropdown toggle
-document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
-    toggle.addEventListener('click', function(e) {
-        if (window.innerWidth <= 992) {
-            e.preventDefault();
-            const dropdown = this.parentElement;
-            dropdown.classList.toggle('active');
-        }
-    });
-});
-
     // Register Service Worker
     if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
