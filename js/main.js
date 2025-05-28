@@ -28,33 +28,37 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Highlight active page in navigation
+    // Updated setActivePage function
     function setActivePage() {
         const navLinks = document.querySelectorAll('.nav-link');
-        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        const currentPath = window.location.pathname;
         const currentHash = window.location.hash;
         
-        navLinks.forEach(link => {
-            const linkPage = link.getAttribute('data-page');
-            const linkHref = link.getAttribute('href');
-            
-            // Check for services page (either current page is index with #services or link is services)
-            if (currentHash === '#services' && linkPage === 'services') {
-                link.classList.add('active');
-            } 
-            // Check for home page
-            else if ((currentPage === 'index.html' && linkPage === 'home' && !currentHash)) {
-                link.classList.add('active');
-            }
-            // Check for other pages
-            else if (currentPage.includes(linkPage) && linkPage !== 'home') {
-                link.classList.add('active');
+        // Reset all active states first
+        navLinks.forEach(link => link.classList.remove('active'));
+        
+        // Determine current page
+        if (currentPath.includes('services/')) {
+            // For service pages
+            const servicesLink = document.querySelector(`.nav-link[data-page="services"]`);
+            if (servicesLink) servicesLink.classList.add('active');
+        } else if (currentPath.endsWith('index.html') || currentPath === '/' || currentPath.endsWith('/')) {
+            if (currentHash === '#services') {
+                const servicesLink = document.querySelector(`.nav-link[data-page="services"]`);
+                if (servicesLink) servicesLink.classList.add('active');
             } else {
-                link.classList.remove('active');
+                const homeLink = document.querySelector(`.nav-link[data-page="home"]`);
+                if (homeLink) homeLink.classList.add('active');
             }
-        });
+        } else if (currentPath.endsWith('about.html')) {
+            const aboutLink = document.querySelector(`.nav-link[data-page="about"]`);
+            if (aboutLink) aboutLink.classList.add('active');
+        } else if (currentPath.endsWith('contact.html')) {
+            const contactLink = document.querySelector(`.nav-link[data-page="contact"]`);
+            if (contactLink) contactLink.classList.add('active');
+        }
     }
-    
+
     setActivePage();
     
     // Search functionality
@@ -63,7 +67,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const searchResults = document.getElementById('searchResults');
     
     if (searchForm && searchInput && searchResults) {
-        // Sample search data - you can expand this
         const searchData = [
             { title: 'Home', url: 'index.html', keywords: 'home main page' },
             { title: 'Graphic Design', url: 'services/graphic-design.html', keywords: 'graphic design branding logo print' },
@@ -94,7 +97,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 item.title.toLowerCase().includes(query) || 
                 item.keywords.toLowerCase().includes(query)
             );
-            
             displayResults(results);
         }
         
@@ -112,7 +114,6 @@ document.addEventListener('DOMContentLoaded', function() {
             searchResults.style.display = 'block';
         }
         
-        // Close search results when clicking outside
         document.addEventListener('click', function(e) {
             if (!searchForm.contains(e.target)) {
                 searchResults.style.display = 'none';
@@ -120,35 +121,55 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
+    function isOnHomePage() {
+        const currentPath = window.location.pathname;
+        return currentPath === '/' || 
+               currentPath === '/index.html' || 
+               currentPath.endsWith('/index.html') ||
+               currentPath === '' ||
+               (currentPath.split('/').pop() === '' && currentPath !== '/');
+    }
+    
     // Smooth scrolling for anchor links and Services navigation
     document.querySelectorAll('a[href^="#"], a[href*="#services"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
-            // Check if the link is to services section
             if (this.getAttribute('href').includes('#services')) {
-                // If we're not on the home page, navigate there first
-                if (!window.location.pathname.endsWith('index.html')) {
+                if (!isOnHomePage()) {
                     window.location.href = 'index.html#services';
                     return;
                 }
+                e.preventDefault();
+                const servicesSection = document.querySelector('#services');
+                if (servicesSection) {
+                    window.scrollTo({
+                        top: servicesSection.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    history.pushState(null, null, '#services');
+                    setActivePage();
+                }
+                return;
             }
-            
             e.preventDefault();
             const targetId = this.getAttribute('href');
             if (targetId === '#') return;
-            
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
                 window.scrollTo({
                     top: targetElement.offsetTop - 80,
                     behavior: 'smooth'
                 });
-                
-                // Update URL without page reload
                 history.pushState(null, null, targetId);
-                
-                // Update active page state
                 setActivePage();
             }
+        });
+    });
+    
+    // Add this to handle service page navigation
+    document.querySelectorAll('[data-service]').forEach(link => {
+        link.addEventListener('click', function(e) {
+            // Let the link work normally
+            // The active state will be handled by setActivePage
         });
     });
     
@@ -156,7 +177,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const footerLinks = document.querySelectorAll('footer a');
     footerLinks.forEach(link => {
         link.addEventListener('click', function() {
-            setTimeout(setActivePage, 100); // Allow time for page navigation
+            setTimeout(setActivePage, 100);
         });
     });
     
@@ -188,20 +209,19 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
+});
+
+// Handle back/forward navigation
+window.addEventListener('popstate', function() {
+    setActivePage();
     
-    // Handle back/forward navigation for hash changes
-    window.addEventListener('popstate', function() {
-        setActivePage();
-        
-        // If we have a hash in the URL, scroll to it
-        if (window.location.hash) {
-            const targetElement = document.querySelector(window.location.hash);
-            if (targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop - 80,
-                    behavior: 'smooth'
-                });
-            }
+    if (window.location.hash) {
+        const targetElement = document.querySelector(window.location.hash);
+        if (targetElement) {
+            window.scrollTo({
+                top: targetElement.offsetTop - 80,
+                behavior: 'smooth'
+            });
         }
-    });
+    }
 });
