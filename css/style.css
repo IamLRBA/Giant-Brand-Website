@@ -95,7 +95,7 @@ mark {
 header {
     background-color: var(--white);
     box-shadow: 0 2px 15px rgba(0,0,0,0.1);
-    position: fixed;
+    position: relative;
     width: 100%;
     z-index: 1000;
     padding: 15px 0;
@@ -243,7 +243,7 @@ header {
 
 .main-nav a {
     font-weight: 500;
-    color: var(--text);
+    color: var(--text) !important;
     text-decoration: none;
     padding: 10px 15px;
     position: relative;
@@ -252,12 +252,12 @@ header {
 }
 
 .main-nav a:hover {
-    color: var(--primary);
+    color: var(--primary) !important;
     background-color: rgba(253, 160, 31, 0.1);
 }
 
 .main-nav a.active {
-    color: var(--primary);
+    color: var(--primary) !important;
     font-weight: 600;
 }
 
