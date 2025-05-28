@@ -14,26 +14,38 @@
 <body>
     <!-- Header with Hamburger Menu -->
     <header>
-        <div class="header-container">
-            <button class="hamburger-btn" aria-label="Menu" aria-expanded="false" aria-controls="main-nav">
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-            </button>
-            <a href="../index.html" class="logo">
-                <span class="logo-icon">GBC</span>
-                <span class="logo-text">Giant Brand Company Ltd.</span>
-            </a>
-            <nav class="main-nav">
-    <ul>
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="#services">Services</a></li>
-    </ul>
-</nav>
+    <div class="header-container">
+        <a href="index.html" class="logo">
+            <span class="logo-icon">GBC</span>
+            <span class="logo-text">Giant Brand Company Ltd.</span>
+        </a>
+
+        <div class="search-container">
+            <form id="searchForm" class="search-form">
+                <input type="text" id="searchInput" placeholder="Search services, info..." aria-label="Search">
+                <button type="submit" aria-label="Search">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+            <div id="searchResults" class="search-results"></div>
         </div>
-    </header>
+
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html" class="nav-link" data-page="home">Home</a></li>
+                <li><a href="index.html#services" class="nav-link" data-page="services">Services</a></li>
+                <li><a href="about.html" class="nav-link" data-page="about">About</a></li>
+                <li><a href="contact.html" class="nav-link" data-page="contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <button class="hamburger-btn" aria-label="Menu" aria-expanded="false" aria-controls="main-nav">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+    </div>
+</header>
 
   <section class="service-hero video-hero">
     <video autoplay muted loop id="hero-video">
