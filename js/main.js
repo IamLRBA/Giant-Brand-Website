@@ -225,3 +225,71 @@ window.addEventListener('popstate', function() {
         }
     }
 });
+
+// Create and add navigation arrows
+function createNavigationArrows() {
+    const arrowsContainer = document.createElement('div');
+    arrowsContainer.className = 'navigation-arrows';
+    
+    // Back to top arrow (shown on all pages)
+    const backToTop = document.createElement('div');
+    backToTop.className = 'nav-arrow back-to-top';
+    backToTop.innerHTML = '<i class="fas fa-arrow-up"></i>';
+    backToTop.title = 'Back to Top';
+    backToTop.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+    
+    // Back arrow (shown on all pages except home)
+    const backArrow = document.createElement('div');
+    backArrow.className = 'nav-arrow back-arrow';
+    backArrow.innerHTML = '<i class="fas fa-arrow-left"></i>';
+    backArrow.title = 'Go Back';
+    backArrow.addEventListener('click', () => {
+        window.history.back();
+    });
+    
+    // Forward arrow (shown on all pages except home)
+    const forwardArrow = document.createElement('div');
+    forwardArrow.className = 'nav-arrow forward-arrow';
+    forwardArrow.innerHTML = '<i class="fas fa-arrow-right"></i>';
+    forwardArrow.title = 'Go Forward';
+    forwardArrow.addEventListener('click', () => {
+        window.history.forward();
+    });
+    
+    arrowsContainer.appendChild(backToTop);
+    
+    // Only show back/forward arrows if not on home page
+    if (!isOnHomePage()) {
+        arrowsContainer.appendChild(backArrow);
+        arrowsContainer.appendChild(forwardArrow);
+    }
+    
+    document.body.appendChild(arrowsContainer);
+    
+    // Show/hide back to top arrow based on scroll position
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 300) {
+            backToTop.style.display = 'flex';
+        } else {
+            backToTop.style.display = 'none';
+        }
+    });
+}
+
+// Helper function to check if on home page
+function isOnHomePage() {
+    const currentPath = window.location.pathname;
+    return currentPath === '/' || 
+           currentPath === '/index.html' || 
+           currentPath.endsWith('/index.html') ||
+           currentPath === '' ||
+           (currentPath.split('/').pop() === '' && currentPath !== '/');
+}
+
+// Call the function when DOM is loaded
+document.addEventListener('DOMContentLoaded', createNavigationArrows);
