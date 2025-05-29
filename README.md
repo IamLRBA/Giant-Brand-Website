@@ -1,9 +1,9 @@
-# Giant Brand Website
+# GIANT BRAND COMPANY Ltd.
 ![Giant Brand Logo](images/GB.jpg)
 
 ---
 
-Welcome to the official website repository for **Giant Brand**, a forward-thinking design and branding agency. This project showcases a unique aesthetic and modern layout.
+Welcome to the official website repository for **Giant Brand Company Ltd.**, a forward-thinking design and branding agency located in Juba, South Sudan. This website was built my me and it showcases a unique aesthetic and modern layout.
 
 ---
 
