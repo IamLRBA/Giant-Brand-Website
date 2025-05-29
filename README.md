@@ -1,0 +1,53 @@
+# Giant Brand Website
+
+---
+
+Welcome to the official website repository for **Giant Brand**, a forward-thinking design and branding agency. This project showcases our unique aesthetic and modern layout.
+
+---
+
+**Live Demo**  
+[Visit the site!](https://iamlrba.github.io/Giant-Brand-Website)
+
+---
+
+## Features
+- **Responsive Design**: Looks great on all devices.
+- **Interactive Layout**: Smooth transitions and engaging animations.
+- **Creative Showcases**: Displays our portfolio and services beautifully.
+- **Easy to Customize**: Built with clean HTML, CSS, and JavaScript.
+
+---
+
+## Deployment
+The website is hosted with **GitHub Pages** for easy updates and reliable uptime.
+
+---
+
+## Tech Stack
+- HTML5
+- CSS3
+- JavaScript
+- GitHub Pages for deployment
+
+---
+
+## License
+This project is open-source. Feel free to explore and contribute!
+
+---
+
+### How to Contribute
+1. Fork the repo.
+2. Create your branch (`git checkout -b feature-branch`).
+3. Commit your changes (`git commit -m 'Add amazing feature'`).
+4. Push to your branch (`git push origin feature-branch`).
+5. Open a pull request!
+
+---
+
+### Contact
+Questions or feedback? Reach out via [IamLRBA](https://github.com/IamLRBA) or [email](jerrylarubafestus@gmail.com).
+
+---
+
