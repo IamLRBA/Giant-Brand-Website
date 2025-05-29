@@ -1,4 +1,5 @@
 # Giant Brand Website
+![Giant Brand Logo](images/GB.jpg)
 
 ---
 
