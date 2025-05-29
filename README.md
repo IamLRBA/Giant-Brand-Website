@@ -2,7 +2,7 @@
 
 ---
 
-Welcome to the official website repository for **Giant Brand**, a forward-thinking design and branding agency. This project showcases our unique aesthetic and modern layout.
+Welcome to the official website repository for **Giant Brand**, a forward-thinking design and branding agency. This project showcases a unique aesthetic and modern layout.
 
 ---
 
