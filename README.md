@@ -14,7 +14,7 @@ Welcome to the official website repository for **Giant Brand**, a forward-thinki
 ## Features
 - **Responsive Design**: Looks great on all devices.
 - **Interactive Layout**: Smooth transitions and engaging animations.
-- **Creative Showcases**: Displays our portfolio and services beautifully.
+- **Creative Showcases**: Displays portfolio and services beautifully.
 - **Easy to Customize**: Built with clean HTML, CSS, and JavaScript.
 
 ---
